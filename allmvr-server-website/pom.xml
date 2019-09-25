@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.nreforma</groupId>
+		<artifactId>angular-springboot</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.nreforma</groupId>
+	<artifactId>angular-springboot-server</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>angular-springboot-server</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>		
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.9.2</version>
+		</dependency>		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		 <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>       
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>	
+		<dependency>
+
+		      <groupId>org.springframework.boot</groupId>
+
+		      <artifactId>spring-boot-starter-aop</artifactId>
+
+	      </dependency>
+		  <dependency>
+
+		      <groupId>org.springframework.boot</groupId>
+
+		      <artifactId>spring-boot-starter-integration</artifactId>
+		
+              </dependency>
+	      
+		  <dependency>
+		      <groupId>com.example</groupId>
+		      <artifactId>allmvr-client-website</artifactId>
+		      <version>${project.version}</version>
+		      <scope>runtime</scope>
+	      </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.parent.basedir}/allmvr-client/src/main/web/dist/nr-app/</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			     <artifactId>maven-failsafe-plugin</artifactId>
+		      </plugin>
+
+		      <plugin>
+			     <groupId>org.apache.maven.plugins</groupId>
+			     <artifactId>maven-surefire-plugin</artifactId>
+                      </plugin>
+		      <plugin>
+			     <groupId>org.springframework.boot</groupId>
+			     <artifactId>spring-boot-maven-plugin</artifactId>
+		      </plugin>
+		      <plugin>
+			     <groupId>org.apache.maven.plugins</groupId>
+			     <artifactId>maven-war-plugin</artifactId>
+			     <configuration>
+				    <packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
+				    <warName>allmvr-server</warName>
+			     </configuration>
+		      </plugin>
+			
+		</plugins>
+	</build>
+
+	<packaging>war</packaging>
+</project>

@@ -1,0 +1,245 @@
+<div class="container1" fxFlex="grow" fxLayout="column" fxLayoutGap="20px" fxLayout.xs="column" fxFill
+  [ngStyle.sm]="{'font-size': '12px'}" ngStyle.md="font-size: 16px;">
+  <div fxFlex="30" fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="10" fxLayout="column">
+      <img src="../../assets/logo.png" class="home11Align" ngClass.sm="home12Align" ngClass.md="home13Align"
+        ngClass.xs="Align5"></div>
+    <div fxFlex="40" fxFlex.sm="85" fxFlex.md="60" fxLayout="column" class="Align" ngClass.sm="Align3"
+      ngClass.md="Align4">
+      <div fxFlex="20" fxLayout="row" class="home10Align" ngClass.xs="Align6" ngClass.sm="Align8" ngClass.md="Align9">
+        Let's Reach
+      </div>
+      <div fxFlex="5" fxLayout="row" class="home10Align" ngClass.xs="Align6" ngClass.sm="Align8" ngClass.md="Align9">
+        Your Customers Widely</div>
+    </div>
+  </div>
+  <div fxLayout="row" class="body" *ngIf="submit" fxLayout.xs="column">
+    <div fxFlex="100" fxFlex="70.5" fxFlex.md="60" fxLayoutAlign="center center" fxFlex.xs=0>
+      <img src="../../assets/image.png" class="align28" ngClass.xs="body1" ngClass.sm="body2">
+    </div>
+<<<<<<< HEAD
+    <form [formGroup]="signupForm" id="elementTo" class="container2" fxHide.xs fxFlex="grow" ngClass.sm="container4" fxFlex.xs="100"
+=======
+    <form [formGroup]="signupForm" class="container2" fxHide.xs fxFlex="grow" ngClass.sm="container4" fxFlex.xs="100"
+>>>>>>> 3d7a9da448326c4fa9833e9d8a44067be6b0e7fc
+      fxFlex.sm="45" fxFlex.md="40" fxFlex="27" ngClass.xs="container3" ngClass.md="container5" fxLayout="column"
+     fxLayoutGap.xs="0px" fxLayoutGap.sm="10px"  fxLayoutGap.md="10px"  fxLayoutGap.lg="10px">
+      <div fxFlex="10" fxFlex.sm="7" fxFlex.md="7" fxLayout="row" class="forAlign" fxLayoutAlign="center center">
+        PARTNER SIGNUP</div>
+      <div fxFlex="7" fxFlex.sm="7" fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+        <div fxFlex="32" class="Align1" ngClass.sm="align" ngClass.md="align2">Store Type </div>
+        <mat-form-field class="Align2">
+          <mat-select formControlName="shopType" placeholder="- Select Category -" required>
+            <mat-option *ngFor="let shop of shoptype" [value]="shop.name">{{shop.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxFlex="7" fxFlex.sm="7" fxFlex.md="7" fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+        <div fxFlex="32" class="Align1" ngClass.sm="align" ngClass.md="align2">Store Name </div>
+        <mat-form-field class="Align2">
+          <input matInput placeholder="Store Name" formControlName="shopName" autocomplete="off" required>
+        </mat-form-field>
+      </div>
+      <div fxFlex="7" fxFlex.sm="7" fxFlex.md="7" fxLayout="row" ngClass.xs="formMargin" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+        <div fxFlex="32" class="Align1" ngClass.sm="align" ngClass.md="align2">Owner Name </div>
+        <mat-form-field class="Align2">
+          <input matInput placeholder="Name" formControlName="shopOwnerName" autocomplete="off" required>
+        </mat-form-field>
+      </div>
+      <div fxFlex="7" fxFlex.sm="7" fxFlex.md="7" fxLayout="row" ngClass.xs="formMargin" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+        <div fxFlex="32" class="Align1" ngClass.sm="align" ngClass.md="align2">Phone No </div>
+        <mat-form-field class="Align2">
+          <input matInput placeholder="Phone No" class="align27" formControlName="phoneNumber" autocomplete="off"
+            required>
+        </mat-form-field>
+      </div>
+
+      <div fxFlex="7" fxFlex.sm="7" fxFlex.md="7" fxLayout="row" ngClass.xs="formMargin" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+        <div fxFlex="32" class="Align1" ngClass.sm="align" ngClass.md="align2">Email</div>
+        <mat-form-field class="Align2">
+          <input matInput placeholder="Email" formControlName="email" autocomplete="off">
+        </mat-form-field>
+      </div>
+      <div fxFlex="25" fxFlex.sm="25" fxFlex.md="25" fxLayout="row" fxLayout.xs="column"
+        fxlayoutAlign.xs="center center">
+        <div fxFlex="32" class="Align1" ngClass.sm="align" ngClass.md="align2">Address</div>
+        <mat-form-field class="Align2">
+          <textarea maxlength="200" Rows="5" #input placeholder="Address" formControlName="address" matInput
+            autocomplete="off" required></textarea>
+          <mat-hint align="end">{{input.value?.length || 0}}/200</mat-hint>
+        </mat-form-field>
+      </div>
+      <div fxFlex="5" fxFlex.md="6" fxLayout="row" fxLayoutAlign="center center">
+        <mat-checkbox color="primary" formControlName="check" required><span style="font-weight: normal">I agree the
+            terms and conditions</span></mat-checkbox>
+
+      </div>
+      <div fxFlex="10" fxLayout="row" fxLayoutAlign="center center">
+        <button mat-flat-button color="primary" class="for3Align" [disabled]="signupForm.invalid"
+          (click)="onsubmit(signupForm.value)">Submit</button>
+      </div>
+    </form>
+
+  </div>
+  <form [formGroup]="signupForm" id="elementTo1" class="container2" fxHide fxShow.xs fxFlex="grow" ngClass.sm="container4"
+    fxFlex.xs="100" fxFlex.sm="45" fxFlex.md="40" fxFlex="30" ngClass.xs="container3" ngClass.md="container5"
+    fxLayout="column" fxLayoutAlign.sm="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+    <div fxFlex="10" fxFlex.sm="7" fxFlex.md="7" fxLayout="row" class="forAlign" fxLayoutAlign="center center"> PARTNER
+      SIGNUP</div>
+    <div fxFlex="7" fxFlex.sm="5.5" fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+      <mat-form-field class="Align2" ngClass.xs="Align10">
+        <mat-select formControlName="shopType" placeholder="Store Type" required>
+          <mat-option *ngFor="let shop of shoptype" [value]="shop.name">{{shop.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxFlex="7" fxFlex.sm="5.5" fxFlex.md="5.5" fxLayout="row" fxLayout.xs="column"
+      fxLayoutAlign.xs="center center">
+      <mat-form-field class="Align2" ngClass.xs="Align10">
+        <input matInput placeholder="Store Name" formControlName="shopName" autocomplete="off" required>
+      </mat-form-field>
+    </div>
+    <div fxFlex="7" fxFlex.sm="5.5" fxFlex.md="5.5" fxLayout="row" fxLayout.xs="column"
+      fxLayoutAlign.xs="center center">
+      <mat-form-field class="Align2" ngClass.xs="Align10">
+        <input matInput placeholder="Name" formControlName="shopOwnerName" autocomplete="off" required>
+      </mat-form-field>
+    </div>
+    <div fxFlex="7" fxFlex.sm="5.5" fxFlex.md="5.5" fxLayout="row" fxLayout.xs="column"
+      fxLayoutAlign.xs="center center">
+      <mat-form-field class="Align2" ngClass.xs="Align10">
+        <input matInput placeholder="Phone No" class="align27" formControlName="phoneNumber" autocomplete="off"
+          required>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="7" fxFlex.sm="5.5" fxFlex.md="5.5" fxLayout="row" fxLayout.xs="column"
+      fxLayoutAlign.xs="center center">
+      <mat-form-field class="Align2" ngClass.xs="Align10">
+        <input matInput placeholder="Email" formControlName="email" autocomplete="off">
+      </mat-form-field>
+    </div>
+    <div fxFlex="25" fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+      <mat-form-field class="Align2" ngClass.xs="Align10">
+        <textarea maxlength="200" Rows="5" #input1 placeholder="Address" formControlName="address" matInput
+          autocomplete="off" required></textarea>
+        <mat-hint align="end">{{input1.value?.length || 0}}/200</mat-hint>
+      </mat-form-field>
+    </div>
+    <div fxFlex="5" fxFlex.md="6" fxLayout="row" fxLayoutAlign="center center">
+      <mat-checkbox color="primary" formControlName="check" required><span style="font-weight: normal">I agree the terms
+          and conditions</span></mat-checkbox>
+
+    </div>
+    <div fxFlex="10" fxLayout="row" fxLayoutAlign="center center">
+      <button mat-flat-button color="primary" class="for3Align" [disabled]="signupForm.invalid"
+        (click)="onsubmit(signupForm.value)">Submit</button>
+    </div>
+  </form>
+  <div fxFlex="90" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="50px" class="align9">
+    <div fxFlex="32" fxLayout="column" class="mat-elevation-z2" fxLayoutGap.xs="20px" fxLayoutGap.sm="20px">
+      <div fxFlex="50" fxFlex.sm="35" fxLayout="row" fxLayoutAlign="center center" class="align12">
+        <img src="../../assets/image2.png" class="imgAlign1" ngClass.sm="align26">
+      </div>
+      <div fxFlex="15" fxFlex.sm="20" fxFlex.md="12" fxLayout="row" class="img1Align2" ngClass.md="align23"
+        fxLayoutAlign="center center" ngStyle.xs="font-size:24px;" ngStyle.sm="font-size:24px;">
+        SMART TECHNOLOGY
+      </div>
+      <div fxFlex="27" fxFlex.sm="45" fxFlex.md="31" fxLayout="row" class="img1Align3 align20" ngClass.md="align22"
+        ngClass.sm="align20" ngClass.xs="align22" ngStyle.sm="font-size:16px;">
+        Allmvr will get you set up with the technology you need to deliver your orders straight away. 
+        Instant access to online dashboard so you can start taking orders to increase your business.
+      </div>
+    </div>
+    <div fxFlex="32" fxLayout="column" class="mat-elevation-z2" fxLayoutGap.xs="20px" fxLayoutGap.sm="20px">
+      <div fxFlex="50" fxLayout="row" fxLayoutAlign="center center" class="align12">
+        <img src="../../assets/image1.png" class="imgAlign1" ngClass.sm="align26">
+      </div>
+      <div fxFlex="15" fxFlex.md="12" fxFlex.sm="34" fxLayout="row" ngClass.md="align23" fxLayoutAlign="center center"
+        class="img2Align2" ngStyle.xs="font-size:24px;" ngStyle.sm="font-size:24px;">
+        RAPID DELIVERY
+      </div>
+      <div fxFlex="35" fxFlex.sm="87" fxLayout="row" class="img2Align3 align20" ngClass.md="align22"
+        ngClass.sm="align20" ngClass.xs="align30" ngStyle.sm="font-size:16px;">
+        From an order being placed to order being delivered, Allmvr will support you every step of the way, to make sure
+        your Customer
+        has best delivery Experience. Let us handle the delivery.
+      </div>
+    </div>
+    <div fxFlex="32" fxLayout="column" class="mat-elevation-z2" fxLayoutGap.xs="20px" fxLayoutGap.sm="20px">
+      <div fxFlex="50" fxLayout="row" fxLayoutAlign="center center" class="align12">
+        <img src="../../assets/image3.png" class="imgAlign1" ngClass.sm="align26">
+      </div>
+      <div fxFlex="15" fxFlex.sm="13" fxFlex.md="11" fxLayout="row" class="img3Align2" ngClass.md="align23"
+        fxLayoutAlign="center center" ngStyle.xs="font-size:24px;" ngStyle.sm="font-size:24px;">
+        ALLDAY SUPPORT
+      </div>
+      <div fxFlex="35" fxFlex.sm="85" fxLayout="row" class="img3Align3 align20" ngClass.md="align22"
+        ngClass.sm="align20" ngClass.xs="align31" ngStyle.sm="font-size:16px;">
+        From taking your first order to growing your brand, Allmvr will provide you with a dedicated account person and
+        a 24/7
+        support team to make sure. You get the most out of our partnership.
+      </div>
+    </div>
+  </div>
+  <div fxFlex="50" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column">
+    <div fxFlex="3"></div>
+    <div fxFlex="45" fxLayout="column" fxLayoutAlign="center center">
+      <img src="../../assets/page2.png" class="align10" ngClass.xs="responsive">
+    </div>
+    <div fxFlex="50" fxLayout="column" class="align11" fxLayoutGap.md="10px" fxLayoutGap.sm="10px">
+      <div fxFlex="15" fxLayout="row" ngClass.xs="align17" ngClass.md="align24" ngClass.sm="align24" class="align13">
+        JOIN &nbsp; <span class="align15" ngClass.xs="align19">ALLMVR</span>&nbsp; NOW
+      </div>
+      <div fxFlex="7" fxLayout="row" ngClass.xs="align18" class="align14" ngClass.md="align25" ngClass.sm="align25">
+        You're steps away from taking orders...
+      </div>
+      <div fxFlex="7" fxLayout="row" ngClass.xs="align18" class="align14" ngClass.md="align25" ngClass.sm="align25">
+        Just give us few details of your store and <br /> start growing your business.
+      </div>
+      <div fxFlex="50" fxLayoutAlign="center center" fxHide.xs ngClass.xs="align20">
+        <button mat-flat-button class="align16" (click)="scrollTOElement('#elementTo')">PARTNER WITH US</button>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="50" fxLayout="row" class="lAlign">
+    <div fxFlex="100" fxLayout="column" fxLayoutGap="30px">
+      <div fxFlex="70" fxFlex.xs="60" fxLayout="row" fxLayout.xs="column" class="align5">
+        <div fxFlex="8" fxFlex.sm="1" fxFlex.xs="0"></div>
+        <div fxFlex="5" fxFlex.xs="15" fxFlex.sm="6" fxLayoutAlign.xs="center center" fxLayoutAlign="center center">
+          <a href="https://in.linkedin.com/company/all-mvr" target="_blank" class="fa fa-linkedin"></a>
+        </div>
+        <div fxFlex="5" fxFlex.xs="15" fxFlex.sm="6" routerLink="/store" fxLayoutAlign.xs="center center"
+          fxLayoutAlign="center center">
+          <a href="https://www.facebook.com/allmvr/" target="_blank" class="fa fa-facebook"></a>
+        </div>
+        <div fxFlex="5" fxFlex.xs="15" fxFlex.sm="6" fxLayoutAlign.xs="center center" fxLayoutAlign="center center">
+          <a href="https://twitter.com/allmvr" target="_blank" class="fa fa-twitter"></a>
+        </div>
+        <div fxFlex="5" fxFlex.xs="15" fxFlex.sm="6" fxLayoutAlign.xs="center center" fxLayoutAlign="center center">
+          <a href="https://www.instagram.com/allmvr/" target="_blank" class="fa fa-instagram"></a>
+        </div>
+        <div fxFlex="45" fxFlex.xs="25" fxFlex.sm="45" fxLayout="column" fxLayoutAlign="center center">
+          <span class="link" (click)="scrollTOElement('#elementTo') || scrollTOElement('#elementTo1')">Become Store Partner</span>
+        </div>
+        <div fxFlex="30" fxFlex.xs="20" fxLayout="column" fxLayoutAlign="center center">
+          <span class="link" (click)="openContactDialog()">Help</span>
+        </div>
+      </div>
+      <div fxFlex="25" fxFlex.xs="20" fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="30px">
+        <div fxFlex="32" fxLayout="column" fxLayoutAlign="center center" class="align20">
+          &copy; 2019 Allmvr
+        </div>
+        <div fxFlex="16" fxFlex.xs="40" fxFlex.sm="25" fxFlex.md="25" fxLayout="column" fxLayoutAlign="center center"
+          class="align20">
+          <a routerLink="/terms" target="_blank">Terms and Conditions</a>
+        </div>
+        <div fxFlex="25" fxFlex.xs="40" fxLayout="column" fxLayoutAlign="center center" class="align20">
+          <a routerLink="/privacy" target="_blank">Privacy Policy</a>
+        </div>
+        <div fxFlex="25" fxFlex.xs="40" fxLayout="column" fxLayoutAlign="center center" class="align20">
+          <a routerLink="/disclaimer" target="_blank">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </div>
